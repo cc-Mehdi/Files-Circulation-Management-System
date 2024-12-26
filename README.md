@@ -40,3 +40,18 @@
    2_2. همچنین میتوانید از طریق فایل های اسکریپتی که در فایل .sln قرار داره کوئری اجرا کنید و دیتابیس خود را ایجاد کنید. آدرس پوشه : `Files-Circulation-Management-System\src\db_class_office_project\Database Scripts`
 4. برای اجرای مستقیم نرم افزار بدون VS پوشه نرم افزار مورد نظر را انتخاب کنید و به مسیر `نام پوشه > پوشه Debug > فایل.exe` را اجرا کنید **(برای نمایش خروجی)**
 5. از برنامه لذت ببرید!
+
+## نحوه استفاده
+-
+
+## امکانات
+* استفاده از Clean Code
+* استفاده از EntityFramework
+* استفاده از DB First Method
+
+
+---
+### Mehdi Gholami : 
+> Gmail [cc.MehdiGholami@gmail.com](cc.MehdiGholami@gmail.com) &nbsp;&middot;&nbsp;
+> GitHub [@cc-Mehdi](https://github.com/cc-Mehdi) &nbsp;&middot;&nbsp;
+> Twitter [@cc_MehdiGh](https://twitter.com/cc_mehdigh)
