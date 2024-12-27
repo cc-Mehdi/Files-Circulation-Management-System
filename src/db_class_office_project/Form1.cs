@@ -146,5 +146,25 @@ namespace db_class_office_project
             }
                 
         }
+
+        private void gvList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex > 0) // make sure to click on records not headers
+            {
+                _idForEdit = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                if (_idForEdit != 0)
+                {
+                    var context = new FileCirculationManagementSystem_DBEntities();
+                    var file = context.Files.FirstOrDefault(u => u.Id == _idForEdit);
+                    context.Files.Remove(file);
+                    context.SaveChanges();
+                    BindGrid();
+                }
+                else
+                    MessageBox.Show("فایل انتخاب شده یافت نشد");
+
+
+            }
+        }
     }
 }
