@@ -22,12 +22,18 @@ namespace db_class_office_project
         private void Form1_Load(object sender, EventArgs e)
         {
             BindGrid();
+
+            // load file status dropdown
+            var context = new FileCirculationManagementSystem_DBEntities();
+            ddlCurrentStatus.DataSource = context.FileStatus.Select(u => new { u.Id, u.Title }).ToList();
+            ddlCurrentStatus.DisplayMember = "Title";
+            ddlCurrentStatus.ValueMember = "Id";
         }
 
         private void BindGrid()
         {
             var context = new FileCirculationManagementSystem_DBEntities();
-            
+
             // load files in grid view
             var list = context.Files.Select(u => new Files_ViewModel()
             {
@@ -37,7 +43,8 @@ namespace db_class_office_project
                 CaseId = u.CaseId,
                 FullName = u.FullName,
                 SubscriptionCode = u.SubscriptionCode,
-                BtnDelete = "حذف"
+                BtnDelete = "حذف",
+                BtnEdit = "ویرایش"
             }).ToList();
 
             gvList.DataSource = list;
@@ -49,12 +56,6 @@ namespace db_class_office_project
             // set alignment of cells in gridview to center
             foreach (DataGridViewColumn item in gvList.Columns)
                 item.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-
-            // load file status dropdown
-            ddlCurrentStatus.DataSource = context.FileStatus.Select(u => new {  u.Id, u.Title }).ToList();
-            ddlCurrentStatus.DisplayMember = "Title";
-            ddlCurrentStatus.ValueMember = "Id";
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -78,7 +79,7 @@ namespace db_class_office_project
                 context.SaveChanges();
 
                 // refresh form
-                BindGrid(); 
+                BindGrid();
                 ResetForm();
             }
         }
@@ -101,7 +102,7 @@ namespace db_class_office_project
                     return false;
                 }
 
-                if(txtSubscriptionCode.Text.Length != 6)
+                if (txtSubscriptionCode.Text.Length != 6)
                 {
                     MessageBox.Show("شماره اشتراک باید 6 رقمی باشد");
                     return false;
@@ -114,57 +115,80 @@ namespace db_class_office_project
             return false;
         }
 
-
-        class Files_ViewModel
-        {
-            public int Id { get; set; }
-            public Nullable<int> FileStatus_Id { get; set; }
-
-            [DisplayName("شماره کلاسه")]
-            public Nullable<int> CaseId { get; set; }
-
-            [DisplayName("نام و نام خانوادگی")]
-            public string FullName { get; set; }
-
-            [DisplayName("شماره اشتراک")]
-            public string SubscriptionCode { get; set; }
-
-            [DisplayName("وضعیت فعلی پرونده")]
-            public string FileStatus { get; set; }
-
-            [DisplayName("حذف پرونده")]
-            public string BtnDelete { get; set; }
-        }
-
         private void gvList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if (e.RowIndex > 0)
             {
                 var col = (DataGridViewColumn)gvList.Columns[e.ColumnIndex];
-                if (col.Name == "BtnDelete")
+                if (col.Name == "BtnDelete" || col.Name == "BtnEdit")
                     gvList.Columns[e.ColumnIndex].DefaultCellStyle.ForeColor = Color.Blue;
             }
-                
+
         }
 
         private void gvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0) // make sure to click on records not headers
+            var col = (DataGridViewColumn)gvList.Columns[e.ColumnIndex];
+            if (e.RowIndex > 0 && col.Name == "BtnDelete") // make sure to click on records not headers and delete column
             {
-                _idForEdit = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
-                if (_idForEdit != 0)
+                var id = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                if (id != 0)
                 {
                     var context = new FileCirculationManagementSystem_DBEntities();
-                    var file = context.Files.FirstOrDefault(u => u.Id == _idForEdit);
+                    var file = context.Files.FirstOrDefault(u => u.Id == id);
                     context.Files.Remove(file);
                     context.SaveChanges();
                     BindGrid();
                 }
                 else
                     MessageBox.Show("فایل انتخاب شده یافت نشد");
-
-
+            }
+            if (e.RowIndex > 0 && col.Name == "BtnEdit") // make sure to click on records not headers and edit column
+            {
+                _idForEdit = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                BindForEdit();
             }
         }
+
+        private void BindForEdit()
+        {
+            var context = new FileCirculationManagementSystem_DBEntities();
+            var file = context.Files.FirstOrDefault(u => u.Id == _idForEdit);
+
+            if(file == null)
+            {
+                MessageBox.Show("فایل انتخاب شده یافت نشد");
+                return;
+            }
+
+            txtCaseID.Text = file.CaseId.ToString();
+            txtFullName.Text = file.FullName;
+            txtSubscriptionCode.Text = file.SubscriptionCode;
+            ddlCurrentStatus.Text = file.FileStatus.Title;
+        }
+    }
+
+    class Files_ViewModel
+    {
+        public int Id { get; set; }
+        public Nullable<int> FileStatus_Id { get; set; }
+
+        [DisplayName("شماره کلاسه")]
+        public Nullable<int> CaseId { get; set; }
+
+        [DisplayName("نام و نام خانوادگی")]
+        public string FullName { get; set; }
+
+        [DisplayName("شماره اشتراک")]
+        public string SubscriptionCode { get; set; }
+
+        [DisplayName("وضعیت فعلی پرونده")]
+        public string FileStatus { get; set; }
+
+        [DisplayName("حذف پرونده")]
+        public string BtnDelete { get; set; }
+
+        [DisplayName("ویرایش پرونده")]
+        public string BtnEdit { get; set; }
     }
 }
