@@ -135,5 +135,16 @@ namespace db_class_office_project
             [DisplayName("حذف پرونده")]
             public string BtnDelete { get; set; }
         }
+
+        private void gvList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if(e.RowIndex > 0)
+            {
+                var col = (DataGridViewColumn)gvList.Columns[e.ColumnIndex];
+                if (col.Name == "BtnDelete")
+                    gvList.Columns[e.ColumnIndex].DefaultCellStyle.ForeColor = Color.Blue;
+            }
+                
+        }
     }
 }

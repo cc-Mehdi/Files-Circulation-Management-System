@@ -177,6 +177,7 @@
             this.gvList.ReadOnly = true;
             this.gvList.Size = new System.Drawing.Size(754, 328);
             this.gvList.TabIndex = 0;
+            this.gvList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvList_CellFormatting);
             // 
             // groupBox3
             // 
