@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FileCirculationManagementSystem_DBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="File">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileStatus_Id" Type="Int32" />
+    <Property Name="CaseId" Type="Int32" />
+    <Property Name="FullName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriptionCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FileStatu" Relationship="Self.FK__Files__FileStatu__29572725" FromRole="Files" ToRole="FileStatus" />
+  </EntityType>
+  <EntityType Name="FileStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Files" Relationship="Self.FK__Files__FileStatu__29572725" FromRole="FileStatus" ToRole="Files" />
+  </EntityType>
+  <Association Name="FK__Files__FileStatu__29572725">
+    <End Role="FileStatus" Type="Self.FileStatu" Multiplicity="0..1" />
+    <End Role="Files" Type="Self.File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FileStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Files">
+        <PropertyRef Name="FileStatus_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FileCirculationManagementSystem_DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Files" EntityType="Self.File" />
+    <EntitySet Name="FileStatus" EntityType="Self.FileStatu" />
+    <AssociationSet Name="FK__Files__FileStatu__29572725" Association="Self.FK__Files__FileStatu__29572725">
+      <End Role="FileStatus" EntitySet="FileStatus" />
+      <End Role="Files" EntitySet="Files" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

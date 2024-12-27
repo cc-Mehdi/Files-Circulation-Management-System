@@ -83,5 +83,11 @@
     <Content Include="Database Scripts\02_Seed_SampleData.sql" />
     <Content Include="Database Scripts\01_Create_DatabaseAndTables.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{58ab3aa1-2a0c-42d6-b430-5a2bc7176af0}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
