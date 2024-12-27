@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCurrentStatus = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtSubscriptionCode = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCaseID = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gvList = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.txtCaseID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSubscriptionCode = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCurrentStatus = new System.Windows.Forms.ComboBox();
             this.btnMyCartable = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
@@ -69,6 +69,87 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "مدیریت پرونده انتخاب شده";
+            // 
+            // txtCurrentStatus
+            // 
+            this.txtCurrentStatus.FormattingEnabled = true;
+            this.txtCurrentStatus.Location = new System.Drawing.Point(435, 55);
+            this.txtCurrentStatus.Name = "txtCurrentStatus";
+            this.txtCurrentStatus.Size = new System.Drawing.Size(211, 26);
+            this.txtCurrentStatus.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(652, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 18);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "وضعیت فعلی پرونده";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(99, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(70, 18);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "شماره اشتراک";
+            // 
+            // txtSubscriptionCode
+            // 
+            this.txtSubscriptionCode.Location = new System.Drawing.Point(6, 19);
+            this.txtSubscriptionCode.Name = "txtSubscriptionCode";
+            this.txtSubscriptionCode.Size = new System.Drawing.Size(87, 25);
+            this.txtSubscriptionCode.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(435, 22);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 18);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "نام و نام خانوادگی";
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.Location = new System.Drawing.Point(184, 19);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(245, 25);
+            this.txtFullName.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(687, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "شماره کلاسه";
+            // 
+            // txtCaseID
+            // 
+            this.txtCaseID.Location = new System.Drawing.Point(541, 19);
+            this.txtCaseID.Name = "txtCaseID";
+            this.txtCaseID.Size = new System.Drawing.Size(140, 25);
+            this.txtCaseID.TabIndex = 3;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Vazir", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.Green;
+            this.btnSubmit.Location = new System.Drawing.Point(6, 51);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(113, 32);
+            this.btnSubmit.TabIndex = 0;
+            this.btnSubmit.Text = "ثبت";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -107,21 +188,21 @@
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             // 
-            // btnSubmit
+            // btnMyCartable
             // 
-            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSubmit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSubmit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Vazir", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.Green;
-            this.btnSubmit.Location = new System.Drawing.Point(6, 51);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(113, 32);
-            this.btnSubmit.TabIndex = 0;
-            this.btnSubmit.Text = "ثبت";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnMyCartable.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMyCartable.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMyCartable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnMyCartable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMyCartable.Font = new System.Drawing.Font("Vazir", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyCartable.ForeColor = System.Drawing.Color.Black;
+            this.btnMyCartable.Location = new System.Drawing.Point(652, 20);
+            this.btnMyCartable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMyCartable.Name = "btnMyCartable";
+            this.btnMyCartable.Size = new System.Drawing.Size(96, 32);
+            this.btnMyCartable.TabIndex = 2;
+            this.btnMyCartable.Text = "کارتابل من";
+            this.btnMyCartable.UseVisualStyleBackColor = true;
             // 
             // btnLogout
             // 
@@ -138,87 +219,6 @@
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "خروج";
             this.btnLogout.UseVisualStyleBackColor = true;
-            // 
-            // txtCaseID
-            // 
-            this.txtCaseID.Location = new System.Drawing.Point(541, 19);
-            this.txtCaseID.Name = "txtCaseID";
-            this.txtCaseID.Size = new System.Drawing.Size(140, 25);
-            this.txtCaseID.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(687, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "شماره کلاسه";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(435, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 18);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "نام و نام خانوادگی";
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.Location = new System.Drawing.Point(184, 19);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(245, 25);
-            this.txtFullName.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 18);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "شماره اشتراک";
-            // 
-            // txtSubscriptionCode
-            // 
-            this.txtSubscriptionCode.Location = new System.Drawing.Point(6, 19);
-            this.txtSubscriptionCode.Name = "txtSubscriptionCode";
-            this.txtSubscriptionCode.Size = new System.Drawing.Size(87, 25);
-            this.txtSubscriptionCode.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(652, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 18);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "وضعیت فعلی پرونده";
-            // 
-            // txtCurrentStatus
-            // 
-            this.txtCurrentStatus.FormattingEnabled = true;
-            this.txtCurrentStatus.Location = new System.Drawing.Point(435, 55);
-            this.txtCurrentStatus.Name = "txtCurrentStatus";
-            this.txtCurrentStatus.Size = new System.Drawing.Size(211, 26);
-            this.txtCurrentStatus.TabIndex = 10;
-            // 
-            // btnMyCartable
-            // 
-            this.btnMyCartable.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMyCartable.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMyCartable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnMyCartable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyCartable.Font = new System.Drawing.Font("Vazir", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMyCartable.ForeColor = System.Drawing.Color.Black;
-            this.btnMyCartable.Location = new System.Drawing.Point(652, 20);
-            this.btnMyCartable.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnMyCartable.Name = "btnMyCartable";
-            this.btnMyCartable.Size = new System.Drawing.Size(96, 32);
-            this.btnMyCartable.TabIndex = 2;
-            this.btnMyCartable.Text = "کارتابل من";
-            this.btnMyCartable.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -238,6 +238,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "سیستم مدیریت گردش پرونده";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

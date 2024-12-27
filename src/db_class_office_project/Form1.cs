@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataLayer;
 
 namespace db_class_office_project
 {
@@ -16,5 +17,21 @@ namespace db_class_office_project
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BindGrid()
+        {
+            var context = new FileCirculationManagementSystem_DBEntities();
+        }
+    }
+
+
+    class Files_ViewModel
+    {
+
     }
 }
