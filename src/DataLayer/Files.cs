@@ -12,7 +12,7 @@ namespace DataLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class File
+    public partial class Files
     {
         public int Id { get; set; }
         public Nullable<int> FileStatus_Id { get; set; }
@@ -20,6 +20,6 @@ namespace DataLayer
         public string FullName { get; set; }
         public string SubscriptionCode { get; set; }
     
-        public virtual FileStatu FileStatu { get; set; }
+        public virtual FileStatus FileStatus { get; set; }
     }
 }

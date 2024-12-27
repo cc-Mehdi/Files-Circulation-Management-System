@@ -33,7 +33,7 @@ namespace db_class_office_project
             {
                 Id = u.Id,
                 FileStatus_Id = u.FileStatus_Id,
-                FileStatus = u.FileStatu.Title,
+                FileStatus = u.FileStatus.Title,
                 CaseId = u.CaseId,
                 FullName = u.FullName,
                 SubscriptionCode = u.SubscriptionCode,
@@ -62,7 +62,7 @@ namespace db_class_office_project
             if (isFormValid()) // check the inputs fill correctly
             {
                 var context = new FileCirculationManagementSystem_DBEntities();
-                var file = new DataLayer.File();
+                var file = new DataLayer.Files();
 
                 if (_idForEdit != 0) // if user try to edit item
                     file = context.Files.FirstOrDefault(u => u.Id == _idForEdit);

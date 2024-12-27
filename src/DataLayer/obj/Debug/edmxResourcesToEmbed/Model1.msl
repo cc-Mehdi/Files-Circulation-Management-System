@@ -2,21 +2,21 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="FileCirculationManagementSystem_DBModelStoreContainer" CdmEntityContainer="FileCirculationManagementSystem_DBEntities">
     <EntitySetMapping Name="Files">
-      <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.File">
+      <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.Files">
         <MappingFragment StoreEntitySet="Files">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FileStatus_Id" ColumnName="FileStatus_Id" />
-          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
-          <ScalarProperty Name="FullName" ColumnName="FullName" />
           <ScalarProperty Name="SubscriptionCode" ColumnName="SubscriptionCode" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+          <ScalarProperty Name="FileStatus_Id" ColumnName="FileStatus_Id" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="FileStatus">
-      <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.FileStatu">
+      <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.FileStatus">
         <MappingFragment StoreEntitySet="FileStatus">
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

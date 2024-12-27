@@ -17,7 +17,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="256" />
   </EntityType>
-  <Association Name="FK__Files__FileStatu__29572725">
+  <Association Name="FK__Files__FileStatu__25869641">
     <End Role="FileStatus" Type="Self.FileStatus" Multiplicity="0..1" />
     <End Role="Files" Type="Self.Files" Multiplicity="*" />
     <ReferentialConstraint>
@@ -32,7 +32,7 @@
   <EntityContainer Name="FileCirculationManagementSystem_DBModelStoreContainer">
     <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FileStatus" EntityType="Self.FileStatus" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__Files__FileStatu__29572725" Association="Self.FK__Files__FileStatu__29572725">
+    <AssociationSet Name="FK__Files__FileStatu__25869641" Association="Self.FK__Files__FileStatu__25869641">
       <End Role="FileStatus" EntitySet="FileStatus" />
       <End Role="Files" EntitySet="Files" />
     </AssociationSet>

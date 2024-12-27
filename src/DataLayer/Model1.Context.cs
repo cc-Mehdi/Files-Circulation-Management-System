@@ -25,7 +25,7 @@ namespace DataLayer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<File> Files { get; set; }
-        public virtual DbSet<FileStatu> FileStatus { get; set; }
+        public virtual DbSet<Files> Files { get; set; }
+        public virtual DbSet<FileStatus> FileStatus { get; set; }
     }
 }
