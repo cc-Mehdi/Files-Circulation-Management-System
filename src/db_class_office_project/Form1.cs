@@ -47,6 +47,12 @@ namespace db_class_office_project
                 BtnEdit = "ویرایش"
             }).ToList();
 
+            if (txtSearch.Text.Length > 0)
+            {
+                int.TryParse(txtSearch.Text, out int numSearch);
+                list = list.Where(u => u.CaseId == numSearch || u.FullName.Contains(txtSearch.Text) || u.SubscriptionCode.Contains(txtSearch.Text)).ToList();
+            }
+
             gvList.DataSource = list;
 
             // hide some columns
@@ -117,7 +123,7 @@ namespace db_class_office_project
 
         private void gvList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.RowIndex > 0)
+            if (e.RowIndex > -1)
             {
                 var col = (DataGridViewColumn)gvList.Columns[e.ColumnIndex];
                 if (col.Name == "BtnDelete" || col.Name == "BtnEdit")
@@ -129,7 +135,7 @@ namespace db_class_office_project
         private void gvList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var col = (DataGridViewColumn)gvList.Columns[e.ColumnIndex];
-            if (e.RowIndex > 0 && col.Name == "BtnDelete") // make sure to click on records not headers and delete column
+            if (e.RowIndex > -1 && col.Name == "BtnDelete") // make sure to click on records not headers and delete column
             {
                 var id = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
                 if (id != 0)
@@ -143,7 +149,7 @@ namespace db_class_office_project
                 else
                     MessageBox.Show("فایل انتخاب شده یافت نشد");
             }
-            if (e.RowIndex > 0 && col.Name == "BtnEdit") // make sure to click on records not headers and edit column
+            if (e.RowIndex > -1 && col.Name == "BtnEdit") // make sure to click on records not headers and edit column
             {
                 _idForEdit = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
                 BindForEdit();
@@ -165,6 +171,11 @@ namespace db_class_office_project
             txtFullName.Text = file.FullName;
             txtSubscriptionCode.Text = file.SubscriptionCode;
             ddlCurrentStatus.Text = file.FileStatus.Title;
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            BindGrid();
         }
     }
 

@@ -44,10 +44,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnMyCartable = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -155,11 +158,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.gvList);
-            this.groupBox2.Location = new System.Drawing.Point(12, 194);
+            this.groupBox2.Location = new System.Drawing.Point(12, 267);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(760, 354);
+            this.groupBox2.Size = new System.Drawing.Size(760, 281);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "فهرست همه پرونده ها";
@@ -175,7 +178,7 @@
             this.gvList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gvList.Name = "gvList";
             this.gvList.ReadOnly = true;
-            this.gvList.Size = new System.Drawing.Size(754, 328);
+            this.gvList.Size = new System.Drawing.Size(754, 255);
             this.gvList.TabIndex = 0;
             this.gvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellClick);
             this.gvList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvList_CellFormatting);
@@ -224,11 +227,32 @@
             this.btnLogout.Text = "خروج";
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(6, 23);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(742, 25);
+            this.txtSearch.TabIndex = 7;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtSearch);
+            this.groupBox4.Location = new System.Drawing.Point(12, 194);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox4.Size = new System.Drawing.Size(757, 65);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "جستجو";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -248,6 +272,8 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,6 +295,8 @@
         private System.Windows.Forms.TextBox txtCaseID;
         private System.Windows.Forms.Button btnMyCartable;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 
