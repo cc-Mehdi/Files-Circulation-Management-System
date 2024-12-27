@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCurrentStatus = new System.Windows.Forms.ComboBox();
+            this.ddlCurrentStatus = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSubscriptionCode = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtCurrentStatus);
+            this.groupBox1.Controls.Add(this.ddlCurrentStatus);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtSubscriptionCode);
@@ -70,13 +70,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "مدیریت پرونده انتخاب شده";
             // 
-            // txtCurrentStatus
+            // ddlCurrentStatus
             // 
-            this.txtCurrentStatus.FormattingEnabled = true;
-            this.txtCurrentStatus.Location = new System.Drawing.Point(435, 55);
-            this.txtCurrentStatus.Name = "txtCurrentStatus";
-            this.txtCurrentStatus.Size = new System.Drawing.Size(211, 26);
-            this.txtCurrentStatus.TabIndex = 10;
+            this.ddlCurrentStatus.FormattingEnabled = true;
+            this.ddlCurrentStatus.Location = new System.Drawing.Point(435, 55);
+            this.ddlCurrentStatus.Name = "ddlCurrentStatus";
+            this.ddlCurrentStatus.Size = new System.Drawing.Size(211, 26);
+            this.ddlCurrentStatus.TabIndex = 10;
             // 
             // label4
             // 
@@ -150,6 +150,7 @@
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "ثبت";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // groupBox2
             // 
@@ -167,6 +168,7 @@
             // 
             this.gvList.AllowUserToAddRows = false;
             this.gvList.AllowUserToDeleteRows = false;
+            this.gvList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvList.Location = new System.Drawing.Point(3, 22);
@@ -255,7 +257,7 @@
         private System.Windows.Forms.DataGridView gvList;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.ComboBox txtCurrentStatus;
+        private System.Windows.Forms.ComboBox ddlCurrentStatus;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSubscriptionCode;
