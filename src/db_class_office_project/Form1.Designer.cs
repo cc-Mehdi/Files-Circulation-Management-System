@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ddlCurrentStatus = new System.Windows.Forms.ComboBox();
@@ -46,11 +47,17 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblUserFullname = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblDatetime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -162,7 +169,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox2.Size = new System.Drawing.Size(760, 281);
+            this.groupBox2.Size = new System.Drawing.Size(760, 235);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "فهرست همه پرونده ها";
@@ -178,7 +185,7 @@
             this.gvList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gvList.Name = "gvList";
             this.gvList.ReadOnly = true;
-            this.gvList.Size = new System.Drawing.Size(754, 255);
+            this.gvList.Size = new System.Drawing.Size(754, 209);
             this.gvList.TabIndex = 0;
             this.gvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellClick);
             this.gvList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvList_CellFormatting);
@@ -222,10 +229,11 @@
             this.btnLogout.Location = new System.Drawing.Point(6, 20);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(52, 32);
+            this.btnLogout.Size = new System.Drawing.Size(50, 32);
             this.btnLogout.TabIndex = 1;
             this.btnLogout.Text = "خروج";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // txtSearch
             // 
@@ -247,11 +255,59 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "جستجو";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.lblDatetime);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.lblUserFullname);
+            this.groupBox5.Location = new System.Drawing.Point(12, 506);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox5.Size = new System.Drawing.Size(757, 42);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            // 
+            // lblUserFullname
+            // 
+            this.lblUserFullname.AutoSize = true;
+            this.lblUserFullname.Location = new System.Drawing.Point(51, 16);
+            this.lblUserFullname.Name = "lblUserFullname";
+            this.lblUserFullname.Size = new System.Drawing.Size(44, 18);
+            this.lblUserFullname.TabIndex = 10;
+            this.lblUserFullname.Text = "نام کاربر";
+            this.lblUserFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(8, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "v1.0.0";
+            // 
+            // lblDatetime
+            // 
+            this.lblDatetime.AutoSize = true;
+            this.lblDatetime.Location = new System.Drawing.Point(648, 16);
+            this.lblDatetime.Name = "lblDatetime";
+            this.lblDatetime.Size = new System.Drawing.Size(102, 18);
+            this.lblDatetime.TabIndex = 14;
+            this.lblDatetime.Text = "1403/10/10 | 14:23";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -274,6 +330,8 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -297,6 +355,11 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label lblUserFullname;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblDatetime;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

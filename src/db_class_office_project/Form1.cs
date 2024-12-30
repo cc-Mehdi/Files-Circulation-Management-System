@@ -21,15 +21,8 @@ namespace db_class_office_project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Hide();
-            if (new FrmLogin().ShowDialog() == DialogResult.OK)
-                this.Show();
-            else
-            {
-                this.Close();
-                return;
-            }
-
+            OpenLoginForm();
+            UpdateDatetime();
             BindGrid();
 
             // load file status dropdown
@@ -37,6 +30,23 @@ namespace db_class_office_project
             ddlCurrentStatus.DataSource = context.FileStatus.Select(u => new { u.Id, u.Title }).ToList();
             ddlCurrentStatus.DisplayMember = "Title";
             ddlCurrentStatus.ValueMember = "Id";
+        }
+
+        private void OpenLoginForm()
+        {
+            this.Hide();
+            if (new FrmLogin().ShowDialog() == DialogResult.OK)
+            {
+                this.Show();
+                var context = new FileCirculationManagementSystem_DBEntities();
+                var userFullname = context.Users.FirstOrDefault(u => u.Id == Program.UserId)?.Fullname ?? "ناشناس";
+                lblUserFullname.Text = $"کاربر : {userFullname}";
+            }
+            else
+            {
+                this.Close();
+                return;
+            }
         }
 
         private void BindGrid()
@@ -185,6 +195,24 @@ namespace db_class_office_project
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             BindGrid();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            OpenLoginForm();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateDatetime();
+        }
+
+        private void UpdateDatetime()
+        {
+            var dateTimeNow = DateTime.Now;
+            var currentDate = $"{dateTimeNow.Year.ToString("0000")}/{dateTimeNow.Month.ToString("00")}/{dateTimeNow.Day.ToString("00")}";
+            var currentTime = $"{dateTimeNow.Hour.ToString("00")}:{dateTimeNow.Minute.ToString("00")}";
+            lblDatetime.Text = $"{currentDate} | {currentTime}";
         }
     }
 
