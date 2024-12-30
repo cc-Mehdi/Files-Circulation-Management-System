@@ -16,10 +16,12 @@ namespace DataLayer
     {
         public int Id { get; set; }
         public Nullable<int> FileStatus_Id { get; set; }
+        public Nullable<int> User_Id { get; set; }
         public Nullable<int> CaseId { get; set; }
         public string FullName { get; set; }
         public string SubscriptionCode { get; set; }
     
         public virtual FileStatus FileStatus { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

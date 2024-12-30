@@ -11,6 +11,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FileStatus_Id" Type="int" />
+          <Property Name="User_Id" Type="int" />
           <Property Name="CaseId" Type="int" />
           <Property Name="FullName" Type="nvarchar" MaxLength="256" />
           <Property Name="SubscriptionCode" Type="nvarchar" MaxLength="256" />
@@ -34,7 +35,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="300" />
           <Property Name="PictureAddress" Type="nvarchar" MaxLength="300" />
         </EntityType>
-        <Association Name="FK__Files__FileStatu__25869641">
+        <Association Name="FK__Files__FileStatu__276EDEB3">
           <End Role="FileStatus" Type="Self.FileStatus" Multiplicity="0..1" />
           <End Role="Files" Type="Self.Files" Multiplicity="*" />
           <ReferentialConstraint>
@@ -46,12 +47,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Files__User_Id__286302EC">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Files" Type="Self.Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="FileCirculationManagementSystem_DBModelStoreContainer">
           <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FileStatus" EntityType="Self.FileStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Files__FileStatu__25869641" Association="Self.FK__Files__FileStatu__25869641">
+          <AssociationSet Name="FK__Files__FileStatu__276EDEB3" Association="Self.FK__Files__FileStatu__276EDEB3">
             <End Role="FileStatus" EntitySet="FileStatus" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Files__User_Id__286302EC" Association="Self.FK__Files__User_Id__286302EC">
+            <End Role="Users" EntitySet="Users" />
             <End Role="Files" EntitySet="Files" />
           </AssociationSet>
         </EntityContainer>
@@ -62,11 +79,15 @@
         <EntityContainer Name="FileCirculationManagementSystem_DBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Files" EntityType="FileCirculationManagementSystem_DBModel.Files" />
           <EntitySet Name="FileStatus" EntityType="FileCirculationManagementSystem_DBModel.FileStatus" />
-          <AssociationSet Name="FK__Files__FileStatu__25869641" Association="FileCirculationManagementSystem_DBModel.FK__Files__FileStatu__25869641">
+          <EntitySet Name="Users" EntityType="FileCirculationManagementSystem_DBModel.Users" />
+          <AssociationSet Name="FK__Files__FileStatu__276EDEB3" Association="FileCirculationManagementSystem_DBModel.FK__Files__FileStatu__276EDEB3">
             <End Role="FileStatus" EntitySet="FileStatus" />
             <End Role="Files" EntitySet="Files" />
           </AssociationSet>
-          <EntitySet Name="Users" EntityType="FileCirculationManagementSystem_DBModel.Users" />
+          <AssociationSet Name="FK__Files__User_Id__286302EC" Association="FileCirculationManagementSystem_DBModel.FK__Files__User_Id__286302EC">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Files" EntitySet="Files" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Files">
           <Key>
@@ -74,10 +95,12 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FileStatus_Id" Type="Int32" />
+          <Property Name="User_Id" Type="Int32" />
           <Property Name="CaseId" Type="Int32" />
           <Property Name="FullName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="SubscriptionCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="FileStatus" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__FileStatu__25869641" FromRole="Files" ToRole="FileStatus" />
+          <NavigationProperty Name="FileStatus" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__FileStatu__276EDEB3" FromRole="Files" ToRole="FileStatus" />
+          <NavigationProperty Name="Users" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__User_Id__286302EC" FromRole="Files" ToRole="Users" />
         </EntityType>
         <EntityType Name="FileStatus">
           <Key>
@@ -85,20 +108,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Files" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__FileStatu__25869641" FromRole="FileStatus" ToRole="Files" />
+          <NavigationProperty Name="Files" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__FileStatu__276EDEB3" FromRole="FileStatus" ToRole="Files" />
         </EntityType>
-        <Association Name="FK__Files__FileStatu__25869641">
-          <End Type="FileCirculationManagementSystem_DBModel.FileStatus" Role="FileStatus" Multiplicity="0..1" />
-          <End Type="FileCirculationManagementSystem_DBModel.Files" Role="Files" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="FileStatus">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Files">
-              <PropertyRef Name="FileStatus_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="Id" />
@@ -110,8 +121,33 @@
           <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="PictureAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Files" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__User_Id__286302EC" FromRole="Users" ToRole="Files" />
         </EntityType>
-      </Schema>
+        <Association Name="FK__Files__FileStatu__276EDEB3">
+          <End Type="FileCirculationManagementSystem_DBModel.FileStatus" Role="FileStatus" Multiplicity="0..1" />
+          <End Type="FileCirculationManagementSystem_DBModel.Files" Role="Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FileStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="FileStatus_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Files__User_Id__286302EC">
+          <End Type="FileCirculationManagementSystem_DBModel.Users" Role="Users" Multiplicity="0..1" />
+          <End Type="FileCirculationManagementSystem_DBModel.Files" Role="Files" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Files">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -123,6 +159,7 @@
                 <ScalarProperty Name="SubscriptionCode" ColumnName="SubscriptionCode" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
                 <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
                 <ScalarProperty Name="FileStatus_Id" ColumnName="FileStatus_Id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

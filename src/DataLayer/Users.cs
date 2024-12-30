@@ -14,6 +14,12 @@ namespace DataLayer
     
     public partial class Users
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Users()
+        {
+            this.Files = new HashSet<Files>();
+        }
+    
         public int Id { get; set; }
         public string Fullname { get; set; }
         public string Username { get; set; }
@@ -21,5 +27,8 @@ namespace DataLayer
         public string Phone { get; set; }
         public string Email { get; set; }
         public string PictureAddress { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Files> Files { get; set; }
     }
 }

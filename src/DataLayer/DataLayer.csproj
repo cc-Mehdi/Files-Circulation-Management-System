@@ -91,7 +91,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database Scripts\01_Create_DatabaseAndTables.sql" />
-    <Content Include="Database Scripts\03_Add_Users_Table.sql" />
     <Content Include="Database Scripts\02_Seed_SampleData.sql" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
