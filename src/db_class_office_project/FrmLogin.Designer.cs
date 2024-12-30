@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblDatetime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +92,7 @@
             this.btnSubmit.TabIndex = 0;
             this.btnSubmit.Text = "ورود";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label1
             // 
@@ -145,6 +148,12 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "v1.0.0";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 18F);
@@ -166,6 +175,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "سیستم مدیریت گردش پرونده";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -186,6 +196,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblDatetime;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
