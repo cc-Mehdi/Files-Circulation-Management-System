@@ -51,14 +51,16 @@ namespace db_class_office_project
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
+                else
+                    lblMessage.Text = "نام کاربری یا کلمه عبور اشتباه است";
             }
         }
 
         private bool IsFormValid()
         {
-            if(string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtUsername.Text))
+            if(string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("لطفا در ورود اطلاعات دقت کنید", "خطا در ورود", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lblMessage.Text = "لطفا در ورود اطلاعات دقت کنید";
                 return false;
             }
 
