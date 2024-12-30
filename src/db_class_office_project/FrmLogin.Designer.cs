@@ -42,12 +42,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblMessage = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblMessage);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtPassword);
@@ -165,6 +169,26 @@
             this.lblMessage.Size = new System.Drawing.Size(186, 18);
             this.lblMessage.TabIndex = 11;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(12, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(39, 18);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "admin";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.Location = new System.Drawing.Point(12, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(39, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "admin";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 18F);
@@ -209,6 +233,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
 
