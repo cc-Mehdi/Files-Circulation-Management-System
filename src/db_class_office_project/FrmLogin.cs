@@ -37,14 +37,14 @@ namespace db_class_office_project
             if(IsFormValid())
             {
                 var context = new FileCirculationManagementSystem_DBEntities();
-                //var hashedPassword = Helper.Encryption.HashPassword(txtPassword.Text);
-                //var userId = context.Users.FirstOrDefault(u => u.Username == txtUsername.Text && u.HashPassword == hashedPassword)?.Id ?? 0;
-                //if (userId != 0)
-                //{
-                //    _userId = userId
-                //    DialogResult = DialogResult.OK;
-                //    this.Close();
-                //}
+                var hashedPassword = Helper.Encryption.HashPassword(txtPassword.Text);
+                var userId = context.Users.FirstOrDefault(u => u.Username == txtUsername.Text && u.HashPassword == hashedPassword)?.Id ?? 0;
+                if (userId != 0)
+                {
+                    _userId = userId;
+                    DialogResult = DialogResult.OK;
+                    this.Close();
+                }
             }
         }
 
