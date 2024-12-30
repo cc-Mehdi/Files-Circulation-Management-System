@@ -21,10 +21,16 @@ namespace db_class_office_project
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            UpdateDatetime();
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+            UpdateDatetime();
+        }
+
+        private void UpdateDatetime()
         {
             var dateTimeNow = DateTime.Now;
             var currentDate = $"{dateTimeNow.Year}/{dateTimeNow.Month}/{dateTimeNow.Day}";
