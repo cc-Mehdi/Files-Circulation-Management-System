@@ -21,6 +21,12 @@ namespace db_class_office_project
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Hide();
+            if (new FrmLogin().ShowDialog() == DialogResult.OK)
+                this.Show();
+            else
+                this.Close();
+
             BindGrid();
 
             // load file status dropdown

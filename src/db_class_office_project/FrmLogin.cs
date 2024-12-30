@@ -21,7 +21,7 @@ namespace db_class_office_project
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
