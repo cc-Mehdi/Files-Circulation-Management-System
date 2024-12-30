@@ -25,7 +25,10 @@ namespace db_class_office_project
             if (new FrmLogin().ShowDialog() == DialogResult.OK)
                 this.Show();
             else
+            {
                 this.Close();
+                return;
+            }
 
             BindGrid();
 
