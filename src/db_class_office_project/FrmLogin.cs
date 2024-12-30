@@ -13,7 +13,6 @@ namespace db_class_office_project
 {
     public partial class FrmLogin : Form
     {
-        public int _userId = 0; 
         public FrmLogin()
         {
             InitializeComponent();
@@ -33,8 +32,8 @@ namespace db_class_office_project
         private void UpdateDatetime()
         {
             var dateTimeNow = DateTime.Now;
-            var currentDate = $"{dateTimeNow.Year}/{dateTimeNow.Month}/{dateTimeNow.Day}";
-            var currentTime = $"{dateTimeNow.Hour}:{dateTimeNow.Minute}";
+            var currentDate = $"{dateTimeNow.Year.ToString("0000")}/{dateTimeNow.Month.ToString("00")}/{dateTimeNow.Day.ToString("00")}";
+            var currentTime = $"{dateTimeNow.Hour.ToString("00")}:{dateTimeNow.Minute.ToString("00")}";
             lblDatetime.Text = $"{currentDate} | {currentTime}";
         }
 
@@ -47,7 +46,7 @@ namespace db_class_office_project
                 var userId = context.Users.FirstOrDefault(u => u.Username == txtUsername.Text && u.HashPassword == hashedPassword)?.Id ?? 0;
                 if (userId != 0)
                 {
-                    _userId = userId;
+                    Program.UserId = userId;
                     DialogResult = DialogResult.OK;
                     this.Close();
                 }
