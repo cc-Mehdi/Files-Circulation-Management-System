@@ -11,7 +11,6 @@ C:\Users\cc-mehdi\Desktop\db_class_office_project\db_class_office_project\obj\De
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\db_class_office_project.exe.config
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\db_class_office_project.exe
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\db_class_office_project.pdb
-C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.csprojAssemblyReference.cache
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.Form1.resources
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.Properties.Resources.resources
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.csproj.GenerateResource.cache
@@ -23,6 +22,7 @@ C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_offic
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\DataLayer.pdb
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\DataLayer.dll.config
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\EntityFramework.xml
-C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.csproj.CopyComplete
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.csproj.AssemblyReference.cache
+C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class.EB06CD1A.Up2Date

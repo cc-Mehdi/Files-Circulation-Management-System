@@ -22,6 +22,18 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="256" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="256" />
+          <Property Name="Username" Type="nvarchar" MaxLength="500" />
+          <Property Name="HashPassword" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="300" />
+          <Property Name="PictureAddress" Type="nvarchar" MaxLength="300" />
+        </EntityType>
         <Association Name="FK__Files__FileStatu__25869641">
           <End Role="FileStatus" Type="Self.FileStatus" Multiplicity="0..1" />
           <End Role="Files" Type="Self.Files" Multiplicity="*" />
@@ -37,6 +49,7 @@
         <EntityContainer Name="FileCirculationManagementSystem_DBModelStoreContainer">
           <EntitySet Name="Files" EntityType="Self.Files" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FileStatus" EntityType="Self.FileStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Files__FileStatu__25869641" Association="Self.FK__Files__FileStatu__25869641">
             <End Role="FileStatus" EntitySet="FileStatus" />
             <End Role="Files" EntitySet="Files" />
@@ -53,6 +66,7 @@
             <End Role="FileStatus" EntitySet="FileStatus" />
             <End Role="Files" EntitySet="Files" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="FileCirculationManagementSystem_DBModel.Users" />
         </EntityContainer>
         <EntityType Name="Files">
           <Key>
@@ -85,6 +99,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fullname" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HashPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="PictureAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -106,6 +132,19 @@
             <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.FileStatus">
               <MappingFragment StoreEntitySet="FileStatus">
                 <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="PictureAddress" ColumnName="PictureAddress" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="HashPassword" ColumnName="HashPassword" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

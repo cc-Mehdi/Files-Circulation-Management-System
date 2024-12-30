@@ -27,5 +27,6 @@ namespace DataLayer
     
         public virtual DbSet<Files> Files { get; set; }
         public virtual DbSet<FileStatus> FileStatus { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

@@ -7,6 +7,7 @@
       <End Role="FileStatus" EntitySet="FileStatus" />
       <End Role="Files" EntitySet="Files" />
     </AssociationSet>
+    <EntitySet Name="Users" EntityType="FileCirculationManagementSystem_DBModel.Users" />
   </EntityContainer>
   <EntityType Name="Files">
     <Key>
@@ -39,4 +40,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fullname" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="HashPassword" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="PictureAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

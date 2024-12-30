@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="FileCirculationManagementSystem_DBModel.Files" Width="1.5" PointX="3" PointY="0.875" />
         <EntityTypeShape EntityType="FileCirculationManagementSystem_DBModel.FileStatus" Width="1.5" PointX="0.75" PointY="1.25" />
         <AssociationConnector Association="FileCirculationManagementSystem_DBModel.FK__Files__FileStatu__25869641" />
+        <EntityTypeShape EntityType="FileCirculationManagementSystem_DBModel.Users" Width="1.5" PointX="5.5" PointY="1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
