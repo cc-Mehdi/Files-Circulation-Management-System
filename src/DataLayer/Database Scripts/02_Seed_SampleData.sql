@@ -13,6 +13,7 @@ INSERT INTO Users (Fullname, Username, HashPassword, Phone, Email, PictureAddres
 ('سارا حسینی', 'sarah', 'hashedpass456', '09129876543', 'sara.h@example.com', 'images/sara.jpg'),
 ('حمید رضایی', 'hamidr', 'hashedpass789', '09121112222', 'hamid.r@example.com', 'images/hamid.jpg'),
 ('نازنین احمدی', 'nazanin', 'hashedpass321', '09125554433', 'nazanin.a@example.com', 'images/nazanin.jpg'),
+('admin', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '', '', ''), -- admin user
 ('مجید تقوی', 'majidt', 'hashedpass654', '09126667788', 'majid.t@example.com', 'images/majid.jpg');
 GO
 
