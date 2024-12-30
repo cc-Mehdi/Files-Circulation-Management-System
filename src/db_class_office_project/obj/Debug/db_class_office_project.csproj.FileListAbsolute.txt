@@ -26,3 +26,5 @@ C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_offic
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class.EB06CD1A.Up2Date
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.exe
 C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.pdb
+C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.csprojAssemblyReference.cache
+C:\Users\cc-mehdi\Desktop\Files-Circulation-Management-System\src\db_class_office_project\obj\Debug\db_class_office_project.FrmLogin.resources
