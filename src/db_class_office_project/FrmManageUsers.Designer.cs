@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManageUsers));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnResetForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,11 +47,12 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnResetForm = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gvList = new System.Windows.Forms.DataGridView();
+            this.ddRole = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -60,6 +62,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ddRole);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnResetForm);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPassword);
@@ -82,6 +86,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "مدیریت کاربر";
             // 
+            // btnResetForm
+            // 
+            this.btnResetForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnResetForm.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnResetForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnResetForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetForm.Font = new System.Drawing.Font("Vazir", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnResetForm.Location = new System.Drawing.Point(146, 119);
+            this.btnResetForm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnResetForm.Name = "btnResetForm";
+            this.btnResetForm.Size = new System.Drawing.Size(94, 32);
+            this.btnResetForm.TabIndex = 7;
+            this.btnResetForm.Text = "خالی کردن فرم";
+            this.btnResetForm.UseVisualStyleBackColor = true;
+            this.btnResetForm.Click += new System.EventHandler(this.btnResetForm_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -95,8 +116,9 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(12, 87);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(228, 25);
-            this.txtPassword.TabIndex = 21;
+            this.txtPassword.TabIndex = 5;
             // 
             // label6
             // 
@@ -112,7 +134,7 @@
             this.txtUsername.Location = new System.Drawing.Point(304, 87);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(199, 25);
-            this.txtUsername.TabIndex = 19;
+            this.txtUsername.TabIndex = 4;
             // 
             // label4
             // 
@@ -128,7 +150,7 @@
             this.txtPhone.Location = new System.Drawing.Point(12, 56);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(228, 25);
-            this.txtPhone.TabIndex = 17;
+            this.txtPhone.TabIndex = 3;
             // 
             // label2
             // 
@@ -144,7 +166,7 @@
             this.txtEmail.Location = new System.Drawing.Point(304, 56);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(199, 25);
-            this.txtEmail.TabIndex = 15;
+            this.txtEmail.TabIndex = 2;
             // 
             // btnSubmit
             // 
@@ -158,9 +180,10 @@
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(128, 32);
-            this.btnSubmit.TabIndex = 14;
+            this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "ثبت";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblMessage
             // 
@@ -184,7 +207,7 @@
             this.txtFullname.Location = new System.Drawing.Point(12, 25);
             this.txtFullname.Name = "txtFullname";
             this.txtFullname.Size = new System.Drawing.Size(453, 25);
-            this.txtFullname.TabIndex = 7;
+            this.txtFullname.TabIndex = 1;
             // 
             // timer1
             // 
@@ -211,22 +234,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnResetForm
-            // 
-            this.btnResetForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnResetForm.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnResetForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btnResetForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetForm.Font = new System.Drawing.Font("Vazir", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnResetForm.Location = new System.Drawing.Point(146, 119);
-            this.btnResetForm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnResetForm.Name = "btnResetForm";
-            this.btnResetForm.Size = new System.Drawing.Size(94, 32);
-            this.btnResetForm.TabIndex = 23;
-            this.btnResetForm.Text = "خالی کردن فرم";
-            this.btnResetForm.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -273,6 +280,26 @@
             this.gvList.Size = new System.Drawing.Size(563, 209);
             this.gvList.TabIndex = 0;
             // 
+            // ddRole
+            // 
+            this.ddRole.FormattingEnabled = true;
+            this.ddRole.Items.AddRange(new object[] {
+            "user",
+            "admin"});
+            this.ddRole.Location = new System.Drawing.Point(304, 118);
+            this.ddRole.Name = "ddRole";
+            this.ddRole.Size = new System.Drawing.Size(211, 26);
+            this.ddRole.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(521, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 18);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "سمت";
+            // 
             // FrmManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 18F);
@@ -294,6 +321,7 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "مدیریت کاربران";
+            this.Load += new System.EventHandler(this.FrmManageUsers_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -329,6 +357,8 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView gvList;
+        private System.Windows.Forms.ComboBox ddRole;
+        private System.Windows.Forms.Label label7;
     }
 }
 
