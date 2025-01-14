@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,12 +32,7 @@ namespace db_class_office_project
             ddlCurrentStatus.DisplayMember = "Title";
             ddlCurrentStatus.ValueMember = "Id";
 
-            // switch visibility for manager and normal user sections
-            var currentUser = context.Users.FirstOrDefault(u => u.Id == Program.UserId);
-            if (currentUser != null && currentUser.Roles.Contains("admin"))
-                btnManageUsers.Visible = true;
-            else
-                btnManageUsers.Visible = false;
+            CheckAccesses(); // show sections base on the user role
         }
 
         private void OpenLoginForm()
@@ -50,12 +46,25 @@ namespace db_class_office_project
                 string userFullname = user?.Fullname ?? "ناشناس",
                        userRole = user?.Roles ?? "نامشخص";
                 lblUserInformation.Text = $"کاربر : {userFullname} | سمت : {userRole}";
+
+                CheckAccesses();
             }
             else
             {
                 this.Close();
                 return;
             }
+        }
+
+        private void CheckAccesses()
+        {
+            var context = new FileCirculationManagementSystem_DBEntities();
+            // switch visibility for manager and normal user sections
+            var currentUser = context.Users.FirstOrDefault(u => u.Id == Program.UserId);
+            if (currentUser != null && currentUser.Roles.Contains("admin"))
+                btnManageUsers.Visible = true;
+            else
+                btnManageUsers.Visible = false;
         }
 
         private void BindGrid()

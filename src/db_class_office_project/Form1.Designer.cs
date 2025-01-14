@@ -87,7 +87,7 @@
             this.ddlCurrentStatus.Location = new System.Drawing.Point(435, 55);
             this.ddlCurrentStatus.Name = "ddlCurrentStatus";
             this.ddlCurrentStatus.Size = new System.Drawing.Size(211, 26);
-            this.ddlCurrentStatus.TabIndex = 10;
+            this.ddlCurrentStatus.TabIndex = 4;
             // 
             // label4
             // 
@@ -112,7 +112,7 @@
             this.txtSubscriptionCode.Location = new System.Drawing.Point(6, 19);
             this.txtSubscriptionCode.Name = "txtSubscriptionCode";
             this.txtSubscriptionCode.Size = new System.Drawing.Size(87, 25);
-            this.txtSubscriptionCode.TabIndex = 7;
+            this.txtSubscriptionCode.TabIndex = 3;
             // 
             // label2
             // 
@@ -128,7 +128,7 @@
             this.txtFullName.Location = new System.Drawing.Point(184, 19);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(245, 25);
-            this.txtFullName.TabIndex = 5;
+            this.txtFullName.TabIndex = 2;
             // 
             // label1
             // 
@@ -144,7 +144,7 @@
             this.txtCaseID.Location = new System.Drawing.Point(541, 19);
             this.txtCaseID.Name = "txtCaseID";
             this.txtCaseID.Size = new System.Drawing.Size(140, 25);
-            this.txtCaseID.TabIndex = 3;
+            this.txtCaseID.TabIndex = 1;
             // 
             // btnSubmit
             // 
@@ -158,7 +158,7 @@
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(113, 32);
-            this.btnSubmit.TabIndex = 0;
+            this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "ثبت";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
