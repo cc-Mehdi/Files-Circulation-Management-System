@@ -30,6 +30,13 @@ namespace db_class_office_project
             ddlCurrentStatus.DataSource = context.FileStatus.Select(u => new { u.Id, u.Title }).ToList();
             ddlCurrentStatus.DisplayMember = "Title";
             ddlCurrentStatus.ValueMember = "Id";
+
+            // switch visibility for manager and normal user sections
+            var currentUser = context.Users.FirstOrDefault(u => u.Id == Program.UserId);
+            if (currentUser != null && currentUser.Roles.Contains("admin"))
+                btnManageUsers.Visible = true;
+            else
+                btnManageUsers.Visible = false;
         }
 
         private void OpenLoginForm()
@@ -39,8 +46,10 @@ namespace db_class_office_project
             {
                 this.Show();
                 var context = new FileCirculationManagementSystem_DBEntities();
-                var userFullname = context.Users.FirstOrDefault(u => u.Id == Program.UserId)?.Fullname ?? "ناشناس";
-                lblUserFullname.Text = $"کاربر : {userFullname}";
+                var user = context.Users.FirstOrDefault(u => u.Id == Program.UserId);
+                string userFullname = user?.Fullname ?? "ناشناس",
+                       userRole = user?.Roles ?? "نامشخص";
+                lblUserInformation.Text = $"کاربر : {userFullname} | سمت : {userRole}";
             }
             else
             {
@@ -180,7 +189,7 @@ namespace db_class_office_project
             var context = new FileCirculationManagementSystem_DBEntities();
             var file = context.Files.FirstOrDefault(u => u.Id == _idForEdit);
 
-            if(file == null)
+            if (file == null)
             {
                 MessageBox.Show("فایل انتخاب شده یافت نشد");
                 return;

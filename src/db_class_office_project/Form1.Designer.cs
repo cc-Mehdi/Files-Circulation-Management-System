@@ -43,14 +43,15 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gvList = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnManageUsers = new System.Windows.Forms.Button();
             this.btnMyCartable = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.lblUserFullname = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblDatetime = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblUserInformation = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -192,6 +193,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnManageUsers);
             this.groupBox3.Controls.Add(this.btnMyCartable);
             this.groupBox3.Controls.Add(this.btnLogout);
             this.groupBox3.Location = new System.Drawing.Point(12, 17);
@@ -201,6 +203,23 @@
             this.groupBox3.Size = new System.Drawing.Size(757, 65);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
+            // 
+            // btnManageUsers
+            // 
+            this.btnManageUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageUsers.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnManageUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btnManageUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageUsers.Font = new System.Drawing.Font("Vazir", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageUsers.ForeColor = System.Drawing.Color.Black;
+            this.btnManageUsers.Location = new System.Drawing.Point(550, 20);
+            this.btnManageUsers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnManageUsers.Name = "btnManageUsers";
+            this.btnManageUsers.Size = new System.Drawing.Size(96, 32);
+            this.btnManageUsers.TabIndex = 3;
+            this.btnManageUsers.Text = "مدیریت کاربران";
+            this.btnManageUsers.UseVisualStyleBackColor = true;
+            this.btnManageUsers.Visible = false;
             // 
             // btnMyCartable
             // 
@@ -259,7 +278,7 @@
             // 
             this.groupBox5.Controls.Add(this.lblDatetime);
             this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Controls.Add(this.lblUserFullname);
+            this.groupBox5.Controls.Add(this.lblUserInformation);
             this.groupBox5.Location = new System.Drawing.Point(12, 506);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
@@ -268,15 +287,14 @@
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             // 
-            // lblUserFullname
+            // lblDatetime
             // 
-            this.lblUserFullname.AutoSize = true;
-            this.lblUserFullname.Location = new System.Drawing.Point(51, 16);
-            this.lblUserFullname.Name = "lblUserFullname";
-            this.lblUserFullname.Size = new System.Drawing.Size(44, 18);
-            this.lblUserFullname.TabIndex = 10;
-            this.lblUserFullname.Text = "نام کاربر";
-            this.lblUserFullname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDatetime.AutoSize = true;
+            this.lblDatetime.Location = new System.Drawing.Point(648, 16);
+            this.lblDatetime.Name = "lblDatetime";
+            this.lblDatetime.Size = new System.Drawing.Size(102, 18);
+            this.lblDatetime.TabIndex = 14;
+            this.lblDatetime.Text = "1403/10/10 | 14:23";
             // 
             // label6
             // 
@@ -287,14 +305,15 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "v1.0.0";
             // 
-            // lblDatetime
+            // lblUserInformation
             // 
-            this.lblDatetime.AutoSize = true;
-            this.lblDatetime.Location = new System.Drawing.Point(648, 16);
-            this.lblDatetime.Name = "lblDatetime";
-            this.lblDatetime.Size = new System.Drawing.Size(102, 18);
-            this.lblDatetime.TabIndex = 14;
-            this.lblDatetime.Text = "1403/10/10 | 14:23";
+            this.lblUserInformation.AutoSize = true;
+            this.lblUserInformation.Location = new System.Drawing.Point(567, 16);
+            this.lblUserInformation.Name = "lblUserInformation";
+            this.lblUserInformation.Size = new System.Drawing.Size(75, 18);
+            this.lblUserInformation.TabIndex = 10;
+            this.lblUserInformation.Text = "مشخصات کاربر";
+            this.lblUserInformation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -356,10 +375,11 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label lblUserFullname;
+        private System.Windows.Forms.Label lblUserInformation;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblDatetime;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnManageUsers;
     }
 }
 
