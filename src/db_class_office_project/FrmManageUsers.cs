@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataLayer;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace db_class_office_project
 {
@@ -47,10 +45,16 @@ namespace db_class_office_project
             }).ToList();
 
             // search filter
-            if (txtSearch.Text.Length > 0)
+            if (txtSearch.Text.Length > 0 && list.Count > 0)
             {
                 string param = txtSearch.Text;
-                list = list.Where(u => u.Fullname.Contains(param) || u.Username.Contains(param) || u.Phone.Contains(param) || u.Email.Contains(param) || u.Roles.Contains(param)).ToList();
+                list = list.ToList().Where(u =>
+                       (u?.Fullname?.Contains(param) ?? false) ||
+                       (u?.Username?.Contains(param) ?? false) ||
+                       (u?.Phone?.Contains(param) ?? false) ||
+                       (u?.Email?.Contains(param) ?? false) ||
+                       (u?.Roles?.Contains(param) ?? false)
+                   ).ToList();
             }
 
             gvList.DataSource = list;
@@ -116,6 +120,11 @@ namespace db_class_office_project
         }
 
         private void FrmManageUsers_Load(object sender, EventArgs e)
+        {
+            BindGrid();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             BindGrid();
         }
