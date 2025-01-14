@@ -220,6 +220,7 @@
             this.btnManageUsers.Text = "مدیریت کاربران";
             this.btnManageUsers.UseVisualStyleBackColor = true;
             this.btnManageUsers.Visible = false;
+            this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
             // btnMyCartable
             // 

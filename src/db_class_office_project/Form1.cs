@@ -223,6 +223,11 @@ namespace db_class_office_project
             var currentTime = $"{dateTimeNow.Hour.ToString("00")}:{dateTimeNow.Minute.ToString("00")}";
             lblDatetime.Text = $"{currentDate} | {currentTime}";
         }
+
+        private void btnManageUsers_Click(object sender, EventArgs e)
+        {
+            new FrmManageUsers().ShowDialog();
+        }
     }
 
     class Files_ViewModel
