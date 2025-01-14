@@ -46,6 +46,7 @@
     <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="PictureAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Files" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__User_Id__286302EC" FromRole="Users" ToRole="Files" />
+    <Property Name="Roles" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
   </EntityType>
   <Association Name="FK__Files__FileStatu__276EDEB3">
     <End Type="FileCirculationManagementSystem_DBModel.FileStatus" Role="FileStatus" Multiplicity="0..1" />

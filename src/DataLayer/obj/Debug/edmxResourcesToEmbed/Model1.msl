@@ -24,6 +24,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.Users">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Roles" ColumnName="Roles" />
           <ScalarProperty Name="PictureAddress" ColumnName="PictureAddress" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />

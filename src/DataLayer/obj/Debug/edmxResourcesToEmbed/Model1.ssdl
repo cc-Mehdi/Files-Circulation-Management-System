@@ -29,6 +29,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="20" />
     <Property Name="Email" Type="nvarchar" MaxLength="300" />
     <Property Name="PictureAddress" Type="nvarchar" MaxLength="300" />
+    <Property Name="Roles" Type="nvarchar" MaxLength="300" />
   </EntityType>
   <Association Name="FK__Files__FileStatu__276EDEB3">
     <End Role="FileStatus" Type="Self.FileStatus" Multiplicity="0..1" />
