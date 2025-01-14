@@ -8,13 +8,13 @@ INSERT INTO FileStatus (Title) VALUES
 GO
 
 -- Insert sample records into Users
-INSERT INTO Users (Fullname, Username, HashPassword, Phone, Email, PictureAddress) VALUES
-('علی محمدی', 'alim', 'hashedpass123', '09121234567', 'ali.m@example.com', 'images/ali.jpg'),
-('سارا حسینی', 'sarah', 'hashedpass456', '09129876543', 'sara.h@example.com', 'images/sara.jpg'),
-('حمید رضایی', 'hamidr', 'hashedpass789', '09121112222', 'hamid.r@example.com', 'images/hamid.jpg'),
-('نازنین احمدی', 'nazanin', 'hashedpass321', '09125554433', 'nazanin.a@example.com', 'images/nazanin.jpg'),
-('admin', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '', '', ''), -- admin user
-('مجید تقوی', 'majidt', 'hashedpass654', '09126667788', 'majid.t@example.com', 'images/majid.jpg');
+INSERT INTO Users (Fullname, Username, HashPassword, Phone, Email, PictureAddress, Roles) VALUES
+('علی محمدی', 'alim', 'hashedpass123', '09121234567', 'ali.m@example.com', 'images/ali.jpg', 'user'),
+('سارا حسینی', 'sarah', 'hashedpass456', '09129876543', 'sara.h@example.com', 'images/sara.jpg', 'user'),
+('حمید رضایی', 'hamidr', 'hashedpass789', '09121112222', 'hamid.r@example.com', 'images/hamid.jpg', 'user'),
+('نازنین احمدی', 'nazanin', 'hashedpass321', '09125554433', 'nazanin.a@example.com', 'images/nazanin.jpg', 'user'),
+('admin', 'admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '', '', '', 'admin'), -- admin user
+('مجید تقوی', 'majidt', 'hashedpass654', '09126667788', 'majid.t@example.com', 'images/majid.jpg', 'user');
 GO
 
 -- Insert additional sample records into Files
