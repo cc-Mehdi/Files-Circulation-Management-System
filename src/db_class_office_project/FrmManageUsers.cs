@@ -26,7 +26,7 @@ namespace db_class_office_project
 
         private void ResetForm()
         {
-            txtFullname.Text = txtEmail.Text = txtPhone.Text = txtUsername.Text = txtPassword.Text = ddRole.Text = "";
+            txtFullname.Text = txtEmail.Text = txtPhone.Text = txtUsername.Text = txtPassword.Text = ddlRoles.Text = "";
         }
 
         private void BindGrid()
@@ -41,7 +41,9 @@ namespace db_class_office_project
                 Phone = u.Phone,
                 Email = u.Email,
                 PictureAddress = u.PictureAddress,
-                Roles = u.Roles
+                Roles = u.Roles,
+                BtnDelete = "حذف",
+                BtnEdit = "ویرایش"
             }).ToList();
 
             // search filter
@@ -77,17 +79,22 @@ namespace db_class_office_project
                 var context = new FileCirculationManagementSystem_DBEntities();
                 var user = new DataLayer.Users();
 
-                if (_idForEdit != 0) // if user try to edit item
-                    user = context.Users.FirstOrDefault(u => u.Id == _idForEdit);
-
                 // create hash password
                 var hashedPassword = Helper.Encryption.HashPassword(txtPassword.Text);
+
+                if (_idForEdit != 0) // if user try to edit item
+                {
+                    user = context.Users.FirstOrDefault(u => u.Id == _idForEdit);
+                    if (string.IsNullOrEmpty(txtPassword.Text)) // if user wasn't changed the password
+                        hashedPassword = user.HashPassword;
+                }
+
 
                 user.Fullname = txtFullname.Text;
                 user.Email = txtEmail.Text;
                 user.Phone = txtPhone.Text;
                 user.Username = txtUsername.Text;
-                user.Roles = ddRole.Text;
+                user.Roles = ddlRoles.Text;
                 user.HashPassword = hashedPassword;
 
                 if (_idForEdit == 0) // if user try to add new item
@@ -104,9 +111,9 @@ namespace db_class_office_project
         private bool isFormValid()
         {
             if (!string.IsNullOrEmpty(txtFullname.Text) || !string.IsNullOrEmpty(txtEmail.Text) || !string.IsNullOrEmpty(txtPhone.Text) ||
-                !string.IsNullOrEmpty(txtUsername.Text) || !string.IsNullOrEmpty(txtPassword.Text))
+                !string.IsNullOrEmpty(txtUsername.Text) || (_idForEdit == 0 && !string.IsNullOrEmpty(txtPassword.Text)))
             {
-                if (txtPassword.Text.Length < 6)
+                if (_idForEdit == 0 && txtPassword.Text.Length < 6)
                 {
                     MessageBox.Show("برای امنیت بیشتر ، کلمه عبور باید حداقل 6 کاراکتر باشد");
                     return false;
@@ -127,6 +134,58 @@ namespace db_class_office_project
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             BindGrid();
+        }
+
+        private void BindForEdit()
+        {
+            var context = new FileCirculationManagementSystem_DBEntities();
+            var user = context.Users.FirstOrDefault(u => u.Id == _idForEdit);
+
+            if (user == null)
+            {
+                MessageBox.Show("کاربر انتخاب شده یافت نشد");
+                return;
+            }
+
+            txtFullname.Text = user.Fullname;
+            txtEmail.Text = user.Email;
+            txtPhone.Text = user.Phone;
+            txtUsername.Text = user.Username;
+            ddlRoles.Text = user.Roles;
+        }
+
+        private void gvList_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                var col = (DataGridViewColumn)gvList.Columns[e.ColumnIndex];
+                if (col.Name == "BtnDelete" || col.Name == "BtnEdit")
+                    gvList.Columns[e.ColumnIndex].DefaultCellStyle.ForeColor = Color.Blue;
+            }
+        }
+
+        private void gvList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var col = (DataGridViewColumn)gvList.Columns[e.ColumnIndex];
+            if (e.RowIndex > -1 && col.Name == "BtnDelete") // make sure to click on records not headers and delete column
+            {
+                var id = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                if (id != 0)
+                {
+                    var context = new FileCirculationManagementSystem_DBEntities();
+                    var user = context.Users.FirstOrDefault(u => u.Id == id);
+                    context.Users.Remove(user);
+                    context.SaveChanges();
+                    BindGrid();
+                }
+                else
+                    MessageBox.Show("کاربر انتخاب شده یافت نشد");
+            }
+            if (e.RowIndex > -1 && col.Name == "BtnEdit") // make sure to click on records not headers and edit column
+            {
+                _idForEdit = int.Parse(gvList.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                BindForEdit();
+            }
         }
     }
 
@@ -151,5 +210,11 @@ namespace db_class_office_project
 
         [DisplayName("سمت")]
         public string Roles { get; set; }
+
+        [DisplayName("حذف کاربر")]
+        public string BtnDelete { get; set; }
+
+        [DisplayName("ویرایش کاربر")]
+        public string BtnEdit { get; set; }
     }
 }

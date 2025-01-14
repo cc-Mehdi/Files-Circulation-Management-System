@@ -51,7 +51,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.gvList = new System.Windows.Forms.DataGridView();
-            this.ddRole = new System.Windows.Forms.ComboBox();
+            this.ddlRoles = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +62,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ddRole);
+            this.groupBox1.Controls.Add(this.ddlRoles);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnResetForm);
             this.groupBox1.Controls.Add(this.label5);
@@ -280,17 +280,19 @@
             this.gvList.ReadOnly = true;
             this.gvList.Size = new System.Drawing.Size(563, 209);
             this.gvList.TabIndex = 0;
+            this.gvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvList_CellClick);
+            this.gvList.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.gvList_CellFormatting);
             // 
-            // ddRole
+            // ddlRoles
             // 
-            this.ddRole.FormattingEnabled = true;
-            this.ddRole.Items.AddRange(new object[] {
+            this.ddlRoles.FormattingEnabled = true;
+            this.ddlRoles.Items.AddRange(new object[] {
             "user",
             "admin"});
-            this.ddRole.Location = new System.Drawing.Point(304, 118);
-            this.ddRole.Name = "ddRole";
-            this.ddRole.Size = new System.Drawing.Size(211, 26);
-            this.ddRole.TabIndex = 23;
+            this.ddlRoles.Location = new System.Drawing.Point(304, 118);
+            this.ddlRoles.Name = "ddlRoles";
+            this.ddlRoles.Size = new System.Drawing.Size(211, 26);
+            this.ddlRoles.TabIndex = 23;
             // 
             // label7
             // 
@@ -358,7 +360,7 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView gvList;
-        private System.Windows.Forms.ComboBox ddRole;
+        private System.Windows.Forms.ComboBox ddlRoles;
         private System.Windows.Forms.Label label7;
     }
 }
