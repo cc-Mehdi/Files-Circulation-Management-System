@@ -27,6 +27,7 @@ namespace DataLayer
         public string Phone { get; set; }
         public string Email { get; set; }
         public string PictureAddress { get; set; }
+        public string Roles { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Files> Files { get; set; }

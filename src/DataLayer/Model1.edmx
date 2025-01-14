@@ -34,6 +34,7 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="20" />
           <Property Name="Email" Type="nvarchar" MaxLength="300" />
           <Property Name="PictureAddress" Type="nvarchar" MaxLength="300" />
+          <Property Name="Roles" Type="nvarchar" MaxLength="300" />
         </EntityType>
         <Association Name="FK__Files__FileStatu__276EDEB3">
           <End Role="FileStatus" Type="Self.FileStatus" Multiplicity="0..1" />
@@ -122,6 +123,7 @@
           <Property Name="Email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="PictureAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Files" Relationship="FileCirculationManagementSystem_DBModel.FK__Files__User_Id__286302EC" FromRole="Users" ToRole="Files" />
+          <Property Name="Roles" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Files__FileStatu__276EDEB3">
           <End Type="FileCirculationManagementSystem_DBModel.FileStatus" Role="FileStatus" Multiplicity="0..1" />
@@ -176,6 +178,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="FileCirculationManagementSystem_DBModel.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
                 <ScalarProperty Name="PictureAddress" ColumnName="PictureAddress" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
