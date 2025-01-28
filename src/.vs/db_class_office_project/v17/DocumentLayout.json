@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|c:\\users\\cc-mehdi\\desktop\\files-circulation-management-system\\src\\db_class_office_project\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|solutionrelative:db_class_office_project\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|c:\\users\\cc-mehdi\\desktop\\files-circulation-management-system\\src\\db_class_office_project\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|solutionrelative:db_class_office_project\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|c:\\users\\cc-mehdi\\desktop\\files-circulation-management-system\\src\\db_class_office_project\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|solutionrelative:db_class_office_project\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|c:\\users\\cc-mehdi\\desktop\\files-circulation-management-system\\src\\db_class_office_project\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A8B02041-9A55-4F4B-88C3-9A102B3E660B}|db_class_office_project\\db_class_office_project.csproj|solutionrelative:db_class_office_project\\frmmanageusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,56 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\Form1.cs",
-              "RelativeDocumentMoniker": "db_class_office_project\\Form1.cs",
-              "ToolTip": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\Form1.cs",
-              "RelativeToolTip": "db_class_office_project\\Form1.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAcwCEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T17:25:51.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrmManageUsers.cs",
-              "DocumentMoniker": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\FrmManageUsers.cs",
-              "RelativeDocumentMoniker": "db_class_office_project\\FrmManageUsers.cs",
-              "ToolTip": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\FrmManageUsers.cs",
-              "RelativeToolTip": "db_class_office_project\\FrmManageUsers.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAADwvy0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T16:21:15.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FrmManageUsers.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\FrmManageUsers.cs",
-              "RelativeDocumentMoniker": "db_class_office_project\\FrmManageUsers.cs",
-              "ToolTip": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\FrmManageUsers.cs [Design]",
-              "RelativeToolTip": "db_class_office_project\\FrmManageUsers.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T16:13:58.459Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\Form1.cs",
-              "RelativeDocumentMoniker": "db_class_office_project\\Form1.cs",
-              "ToolTip": "C:\\Users\\cc-mehdi\\Desktop\\Files-Circulation-Management-System\\src\\db_class_office_project\\Form1.cs [Design]",
-              "RelativeToolTip": "db_class_office_project\\Form1.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-14T15:06:42.945Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
